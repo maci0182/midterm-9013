@@ -106,7 +106,7 @@ nav a:visited{
 nav a:active,
 nav a:focus,
 nav a:hover{
-    
+    color: aqua;
 }
 main{
     width: 100%;
