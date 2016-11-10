@@ -16,7 +16,7 @@ Colour scheme
 
 **************************************************/
 @import 'https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif';
-
+@import url('https://fonts.googleapis.com/css?family=Cormorant+SC|Quattrocento+Sans');
 *{
     padding: 0;
     margin: 0;
@@ -25,114 +25,367 @@ Colour scheme
 html{
     font-size: 16px;
     line-height: 1.6;
-    font-family: 'Droid Sans', 'more font stack stuff', sans-serif;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
 /*************************** 
 DEFAULTS - MOBILE FIRST 
 ***************************/
 h1{
-    font: bold 4.236rem 'Droid Serif', 'more font stack stuff', serif;
-    text-shadow: 1px 1px white;
+    font: bold 4.236rem 'Cormorant SC', serif;
     color: cadetblue;
+     height: 200px;
+    text-shadow: 1px 1px white;
+
 }
 h2{
-    font: bold 2.618rem 'Droid Serif', 'more font stack stuff', serif;
+    font: bold 2.618rem 'Cormorant SC', serif;
 }
 li, p, a{
-    font: bold 1.618rem 'Droid Sans', 'more font stack stuff', sans-serif;
+    font: bold 1.618rem 'Quattrocento Sans', sans-serif;
 }
+
+/*css validator shows this error*/
+/*Value Error : font Parse Error */
 pre, code, kbd{
     font: normal 1.0rem 'Droid Sans Mono', 'more font stack stuff', 
 }
 /***************************
     LAYOUT - MOBILE FIRST
 ***************************/
+body{
+    width: 37.5em;
+    max-width: 100%;
+    min-width: 20em;
+    background:#3D4C99;
+    padding: 1em;
+}
+
 .wrapper{
     width: 95%;
-    margin: 0 auto;
+    margin: auto;
+    background: #00FFE6;
+    word-wrap: break-word;
+    border-radius: 1em;
 }
-header{
+.masthead{
     position:relative;
     width: 100%;
+/*
     background-image: url("../images/tall_pine_tree_background_20150321_1925470168.jpg");
     background-position: 20% 50%;
-    
+*/
+    overflow: hidden;
+    height: 200px;
     
 }
 
-/*header::after{
-   background-image: url("../images/5026138-tall-pine-trees-in-the-forest-against-blue-sky.jpg");
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-    width: 100%;
+.masthead h1{
+    width:100%;
+    height: 100%;
+    background: transparent;
+    position: relative;
+    text-align: center;
+    line-height: 100px;
+    z-index: 1;
+}
+
+.masthead img{
+    background-image: url("../images/tall_pine_tree_background_20150321_1925470168.jpg");
+/*    background-size: contain;*/
     background-size: cover;
-    
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
 }
-*/    
-}
+/***************************
+    NAVIGATION - MOBILE FIRST
+***************************/
+
 nav{
     width: 100%;
-    
+    padding-top: 1em;
 }
-nav>ul{
-    width: 100%;
-}
-nav li{
-    width: 100%;
-    list-style: none;
-    
-}
-nav ul.mainnav li a{
-    display: block;
-    padding: 1rem;
-    white-space: nowrap;
-    text-decoration: none;
-    font-weight: 700;
-/*    background: #000;*/
-    border-bottom: 1px solid #a00;
-}
-nav a,
-nav a:link,
-nav a:visited{
-    display: block;
-    font: bold 1.618rem 'Droid Sans', 'more font stack stuff', sans-serif;
-    text-align: center;
-        
-}
-nav a:active,
-nav a:focus,
-nav a:hover{
-    background: aqua;
-}
+    nav>ul{
+        min-width: 10%;
+        max-width: 50%;
+        margin: 0 auto  ;
+        border: 3px solid #004D5E;
+        background: #00D0FF;
+        border-radius: 10px;
+    }
+        nav li{
+            list-style: none;
+            margin: 0 auto;
+            border-bottom: 3px solid #004D5E;
+        }
+        nav li:last-child{
+            border-bottom: none;
+        }
+            nav a,
+            nav a:link,
+            nav a:visited{
+                width: 100%;
+                display: inline-block;
+                font-size: 1.5em;
+                text-decoration: none;
+                text-align: center;
+                color: #004D5E;
+            }
+            nav a:active,
+            nav a:focus,
+            nav a:hover{
+                background: #FF7800;
+            }
 main{
     width: 100%;
+    padding: 12px;
+    margin: 0 auto;
 }
 .col{
-    float: left;
-    width: 50%;
-    padding: 10px;
+    width: 100%;
+    float: none;
+    padding: 24px 0;
+}
+.col h2{
+    line-height: 75px;
+    padding: 0 0 12px 0;
+    color: #B23900;
+    text-align: center;
+    
 }
 .col img{
     width: 100%;
     height: auto;
     max-width: 100%;
     background-color: azure;
+    display: block;
+    clear: both;
 }
+
 footer{
     width: 100%;
+    border-top: 3px solid #00B2A1;
+    text-align: center;
+    clear:both;
+}
+    footer p {
+        font-size: .8em;
+        color:darkgreen;
+    }
+    footer ul li {
+        width: 33.33%;
+        height: 3em;
+        display: inline;
+        
+/*        if i dont put -0.8em my menu item doesnt get aligned properly.*/
+/*        Value Error : padding -0.8em negative values are not allowed : -0.8em 2em*/
+        padding: -0.8em 2em;
+        list-style-type: none;
+    }
+        footer li a,
+        footer li a:link,
+        footer li a:visited {
+            display: inline;
+            width: 100%;
+            color: #00B2A1;
+            font-size: .8em;
+            text-decoration: none;
+        }
+
+footer li a,
+footer li a:hover{
+    color: #F8FFFE;
 }
 
 @media screen and (min-width:600px){
   
-    
+     body {
+        width: 50em;
+        min-width: 37.5em;
+    }
+    main{
+        width: 90%;
+        padding: 1em 0;
+        overflow: hidden;
+    }
+    .masthead{
+        height: 15vw;
+    }
+        .masthead h1{
+            font-size: 8vw;
+        }
+    nav{
+        padding-top: 0;
+        width: 95%;
+        clear: both;
+        margin: 0 auto;
+        border: #004D5E solid 3px;
+        border-top: none;
+    }
+        nav>ul{
+            border: none;
+            width: 100%;
+            min-width: 101%;
+            max-width: 100%;
+            border-radius: 0;
+            text-align: center;
+        }
+            nav li{
+                display: inline;
+                border: none;
+                font-size: 1.5vw;
+                list-style-type: none;
+            }
+                nav a,
+                nav a:link,
+                nav a:visited{
+                    width: 20%;
+                    display: inline;
+                    padding: 0 1.5em;
+                }
+    .col{
+        width: 50%;
+        display: inline-block;
+        float: left;
+        padding: 0 1em 2em 1em;
+    }
+        .col img{
+            width: 50%;
+            float: left;
+            margin: 0 .5em 0 0;
+        }
+        .col p span {
+            display: inline;
+            clear: none;
+        }
 }
 @media screen and (min-width: 800px){
- 
+ body {
+        width: 75em;
+        min-width: 50em;
+        padding: 0;
+    }
+    .masthead{
+        padding-top: 0.8em;
+    }
+    main{
+        width: 90%;
+    }
+    nav{
+        padding-top: 0;
+        width: 90%;
+        clear: both;
+        margin: 0 auto;
+        border: none;
+    }
+        nav>ul{
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            text-align: left;
+            margin: 2em 0 1em 1em;
+        }
+            nav li{
+                display: inline;
+                border: none;
+                width: 20%;
+                font-size: 2.2vw;
+                list-style-type: none;
+            }
+                nav a,
+                nav a:link,
+                nav a:visited{
+                    padding: 0 .8em 0 .2em;
+                    text-shadow: 2px 2px 1px #FF7800;
+                    border-radius: 5px;
+                }
 }
 @media screen and (min-width: 1200px){
-    
+     body {
+        width: 100%;
+        min-width: 75em;
+     
+    }
+    .wrapper {
+        width: 100%;
+    }
+    .masthead{
+        height: 10em;
+    }
+        .masthead h1{
+            font-size: 6em;
+            line-height: 1em;
+        }
+    main{
+        width: 70%;
+        float: right;
+        padding-top: 1.3em;
+    }
+    nav{
+        width: 30%;
+        float: left;
+        clear: both;
+        padding-top: 1.3em;
+      
+    }
+        nav>ul{
+            margin: 0 auto;
+            border: none;
+            width: 100%;
+
+            overflow: hidden;
+        }
+            nav li{
+                display: inline-block;
+                width: 100%;
+                font-size: 1.6em;
+                list-style-type: none;
+                text-align: left;
+                padding: 0 2em 0 6vw;
+               
+            }
+                nav a,
+                nav a:link,
+                nav a:visited{
+                    width: 100%;
+                    display: block;
+                    text-align: left;
+                    
+                }
+    .col img{
+        width: 55%;
+    }
+    footer {
+        width: 100%;
+        overflow: hidden;
+       
+    }
+        footer p{
+            width: 20%;
+            float: left;
+            padding-top: .2em;
+        }
+        footer ul {
+            width: 80%;
+            float: right;
+            display: inline;
+            text-align: right;
+        }
+        footer ul li {
+            width: 33.33%;
+            display: inline;
+            padding: 0 2em;
+        }
+    footer p {
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
 }
